@@ -10,9 +10,9 @@ COPY pom.xml .
 # --- BAGIAN UTAMA: MENAIKKAN VERSI ---
 # Perintah ini membaca versi saat ini, menaikkannya,
 # dan memperbarui pom.xml HANYA di dalam container build ini.
-RUN mvn build-helper:parse-version versions:set \
-    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
-    versions:commit
+#RUN mvn build-helper:parse-version versions:set \
+#    -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion} \
+#    versions:commit
 
 # Unduh semua dependency berdasarkan pom.xml yang versinya sudah naik
 RUN mvn dependency:go-offline
