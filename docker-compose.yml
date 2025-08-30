@@ -1,0 +1,16 @@
+services:
+  # Nama service, bisa apa saja (misal: 'app', 'backend', dll)
+  app:
+    # Perintah untuk membangun image Docker
+    build:
+      # Tentukan konteks build, '.' berarti direktori saat ini
+      context: .
+      # Tentukan nama Dockerfile yang akan digunakan
+      dockerfile: Dockerfile
+    # Beri nama yang mudah dikenali untuk image yang akan dibuat
+    image: appdz-springboot-app
+    # Beri nama yang mudah dikenali untuk container yang akan berjalan
+    container_name: appdz-container
+    # Petakan port 8080 di mesin Anda (host) ke port 8080 di dalam container
+    ports:
+      - "8080:8080"
