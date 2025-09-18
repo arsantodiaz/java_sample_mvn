@@ -70,5 +70,16 @@ echo.
 echo ===== SELESAI =====
 echo Aplikasi berjalan dengan versi %NEW_VERSION% di http://localhost:8080
 
+
+echo.
+echo ===== MENGKOMIT PERUBAHAN DI pom.xml =====
+git add pom.xml
+git commit -m "chore: bump patch version to %NEW_VERSION%"
+if %ERRORLEVEL% neq 0 (
+    echo.
+    echo ERROR: Gagal mengkomit perubahan pom.xml.
+    exit /b %ERRORLEVEL%
+)
+echo.
 endlocal
 
