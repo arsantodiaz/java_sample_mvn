@@ -81,5 +81,17 @@ if %ERRORLEVEL% neq 0 (
     exit /b %ERRORLEVEL%
 )
 echo.
+
+
+echo ===== MENDORONG PERUBAHAN KE REMOTE =====
+git push origin main
+if %ERRORLEVEL% neq 0 (
+    echo.
+    echo ERROR: Gagal mendorong perubahan ke remote.
+    exit /b %ERRORLEVEL%
+)
+echo.
 endlocal
+echo ===== SEMUA PROSES SELESAI =====
+
 
